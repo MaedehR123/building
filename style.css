@@ -176,11 +176,16 @@ nav {
 }
 
 .hero h1 {
+    color: black;
     font-size: 30px;
-    background-color: #ff6a00cd;
+    background-color:#ff9e28;
     width: 700px;
-    border-radius: 10px;
+    border-radius: 30px;
     margin: 0 auto; /* این باعث میشه h1 وسط صفحه بیاد */
+    padding: 10px;
+box-shadow: 
+   
+    -6px -6px 12px rgba(255,255,255,0.4);
 }
 
 
