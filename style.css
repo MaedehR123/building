@@ -50,6 +50,7 @@ header {
 
 .logo {
     font-size: 18px;
+    color: #ff6a00;
 }
 
 .nav-links {
@@ -178,7 +179,7 @@ nav {
 .hero h1 {
     color: black;
     font-size: 30px;
-    background-color:#ff9e28;
+    background-color:#ff6a00c8;
     width: 700px;
     border-radius: 30px;
     margin: 0 auto; /* این باعث میشه h1 وسط صفحه بیاد */
