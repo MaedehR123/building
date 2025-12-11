@@ -209,11 +209,19 @@ nav {
     text-decoration: none;
     border-radius: 5px;
     font-size: 18px;
+    transition: all 0.3s ease; /* انیمیشن نرم */
+    display: inline-block;
 }
 
 .btn-primary:hover {
     background-color: #ff6a00;
+    transform: translateY(-3px) scale(1.03); /* کمی برجسته شدن */
+    box-shadow: 0 8px 20px rgba(255, 106, 0, 0.35); /* جلوه نور نرم */
 }
+
+
+
+
 
 /* استایل بخش خدمات */
 .servicess {
