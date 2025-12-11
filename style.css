@@ -411,7 +411,7 @@ nav {
   text-align: center;
   cursor: pointer;
   border-radius: 20px;
-  background: rgba(255,255,255,0.12); /* سفید شفاف */
+  background: rgba(255, 255, 255, 0.214); /* سفید شفاف */
   backdrop-filter: blur(12px); /* Blur شیشه‌ای */
   border: 1px solid rgba(255,255,255,0.25);
   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
@@ -421,7 +421,7 @@ nav {
 /* هاور کارت */
 .team-member:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.822);
 }
 
 /* تصویر پروفایل */
@@ -431,7 +431,7 @@ nav {
   border-radius: 50%;
   margin-bottom: 15px;
   object-fit: cover;
-  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
 }
 
 /* نام */
