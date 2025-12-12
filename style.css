@@ -204,7 +204,7 @@ nav {
 .btn-primary {
     margin-top: 50px;
     padding: 10px 20px;
-    background-color: #ff8c00;
+    background-color: #d4af37;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -214,9 +214,9 @@ nav {
 }
 
 .btn-primary:hover {
-    background-color: #ff6a00;
+    background-color: #d4af3788;
     transform: translateY(-3px) scale(1.03); /* کمی برجسته شدن */
-    box-shadow: 0 8px 20px rgba(255, 106, 0, 0.35); /* جلوه نور نرم */
+     text-shadow: 0 0 18px rgba(212, 175, 55, 0.45);
 }
 
 
