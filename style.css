@@ -224,153 +224,234 @@ nav {
 
 
 /* استایل بخش خدمات */
+
+/* ============================
+   1) بخش خدمات (تم طلایی لوکس)
+   ============================ */
+
 .servicess {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
-    background-color: #1f1e1f58
+    position: relative;
+     background-color:#1f1e1f58 ;
+}
+
+.servicess::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.07;
+    pointer-events: none;
 }
 
 .servicess h2 {
-    color: white;
-    font-size: 35px;
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    text-shadow: 0 0 18px rgba(212, 175, 55, 0.45);
 }
 
+/* کارت‌ها */
 .service-cards {
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
+/* کارت طلایی */
 .service-card {
-    background: #ffffffb2;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 30%;
+    background: rgba(255, 255, 255, 0.274);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    padding: 40px;
+    border-radius: 18px;
+    width: 28%;
+    min-width: 260px;
     text-align: center;
+    transition: 0.45s ease;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+    position: relative;
+    overflow: hidden;
 }
 
+/* هاله طلایی */
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -20%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212,175,55,0.25) 0%, rgba(0,0,0,0) 60%);
+    opacity: 0;
+    transition: 0.6s ease;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.service-card:hover {
+    transform: translateY(-15px) scale(1.04);
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.35);
+}
+
+/* آیکون */
 .service-card i {
-    font-size: 40px;
-    color: #ff8c00;
-    margin-bottom: 20px;
+    font-size: 58px;
+    color: #d4af37;
+    margin-bottom: 22px;
+    transition: 0.5s ease;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
 }
 
+.service-card:hover i {
+    transform: scale(1.15) rotate(8deg);
+    text-shadow: 0 0 25px rgba(212, 175, 55, 0.9);
+}
+
+/* عنوان کارت */
 .service-card h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 27px;
+    font-weight: bold;
+    color: #f5e4b8;
+    margin-bottom: 12px;
 }
 
+/* متن کارت */
 .service-card p {
-    font-size: 16px;
-    color: #555;
+    font-size: 17px;
+    color: #dbdbdb;
 }
 
-/* استایل بخش پروژه‌ها */
+
+/* ============================
+   2) بخش پروژه‌ها (لوکس طلایی)
+   ============================ */
+
 .projects {
-    text-align: center;
-    padding: 40px 0;
-    background-color: #1f1e1f58;
+    padding: 70px 20px;
+    background-color:#1f1e1f58 ;
+    position: relative;
 }
 
 .projects h2 {
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 20px;
+    color: #d4af37;
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
 }
 
 .project-gallery {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
 }
 
 .project-item {
     width: 30%;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    min-width: 280px;
+    background: #111;
+    border: 1px solid rgba(212,175,55,0.35);
+    box-shadow: 0 0 25px rgba(212,175,55,0.15);
+    border-radius: 12px;
     overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease;
+    transition: 0.4s ease;
 }
 
 .project-item:hover {
-    transform: scale(1.05);
+    transform: translateY(-12px);
+    box-shadow: 0 0 30px rgba(212,175,55,0.35);
 }
 
 .project-image {
     width: 100%;
-    height: 200px;
+    height: 230px;
     object-fit: cover;
-    border-bottom: 2px solid #ddd;
-    transition: transform 0.3s ease;
+    transition: 0.4s ease-in-out;
 }
 
 .project-item:hover .project-image {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .project-description {
     padding: 20px;
-    font-size: 1.2rem;
-    color: #555;
-    transition: font-weight 0.3s ease;
+    font-size: 1.15rem;
+    color: #e6e6e6;
 }
 
 .project-item:hover .project-description {
     font-weight: bold;
+    color: #f5e4b8;
 }
 
 
-/*   پارت دوم استایل خدمات ما */
+/* ============================
+   3) پارت دوم خدمات
+   ============================ */
+
 .services {
-    background-color:#1f1e1f58 ;
-    text-align: center;
-    padding: 50px 20px;
-    color:white;
+    background: #0f0e0e;
+    padding: 60px 20px;
+    color: white;
 }
 
 .services h3 {
-    font-weight: bolder;
-    font-size: 25px;
-    color: #ff9e28;
+    font-size: 29px;
+    color: #d4af37;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
 .services p {
-    font-size: 1.1rem;
-    margin-top: 10px;
+    font-size: 1.17rem;
+    color: #e6e6e6;
 }
 
+/* دکمه طلایی */
 .btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #ff8c00;
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    font-size: 18px;
-    margin-inline: 35%;
+    background: linear-gradient(135deg, #d4af37, #b0882e);
+    color: #111;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    margin-top: 25px;
+    border: none;
+    box-shadow: 0 0 15px rgba(212,175,55,0.35);
 }
 
 .btn:hover {
-    background-color: #ff6a00;
+    background: linear-gradient(135deg, #e8c75c, #c59632);
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(212,175,55,0.55);
 }
 
-#services {
-    padding: 60px 0;
-    text-align: center;
+
+/* ============================
+   4) واکنش‌گرا
+   ============================ */
+@media (max-width: 768px) {
+    .service-card,
+    .project-item {
+        width: 90%;
+    }
 }
 
-#services h2 {
-    color: #4A0072;
-    margin-bottom: 30px;
-    font-size: 2rem;
-}
+
+
 
 
 
