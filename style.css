@@ -177,9 +177,9 @@ nav {
 }
 
 .hero h1 {
-    color: black;
+    color: rgba(0, 0, 0, 0.807);
     font-size: 30px;
-    background-color:#ff6a00c8;
+    background-color:#d4af37;
     width: 700px;
     border-radius: 30px;
     margin: 0 auto; /* این باعث میشه h1 وسط صفحه بیاد */
