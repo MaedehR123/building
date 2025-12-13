@@ -1,38 +1,34 @@
-// انتخاب منو و دکمه همبرگر
-const nav = document.querySelector('nav');
+// Mobile Menu
 const toggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+const nav = document.querySelector('.nav-links');
 
-// وقتی دکمه همبرگر کلیک شد، منو باز یا بسته می‌شود
 toggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+    nav.classList.toggle('show');
 });
 
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+// Team Details Toggle
+function toggleDetails(card) {
+    card.classList.toggle("active");
+}
+
+// Scroll Animation
+const sections = document.querySelectorAll("section, .team-section");
+
+window.addEventListener("scroll", () => {
+    const trigger = window.innerHeight * 0.85;
+
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < trigger) {
+            sec.style.opacity = "1";
+            sec.style.transform = "translateY(0)";
+        }
     });
 });
 
-
-// برای قسمت اعضای تیم ما
-function toggleDetails(member) {
-    const isActive = member.classList.contains('active');
-    document.querySelectorAll('.team-member').forEach(m => m.classList.remove('active'));
-    if (!isActive) member.classList.add('active');
-}
-
-function changeSlide(n) {
-    slideIndex += n;
-    const slides = document.querySelectorAll('.slides img');
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    if (slideIndex < 1) {slideIndex = slides.length}
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';  
-    }
-    slides[slideIndex - 1].style.display = 'block';  
-}
+// Initial state
+sections.forEach(sec => {
+    sec.style.opacity = "0";
+    sec.style.transform = "translateY(40px)";
+    sec.style.transition = "1s";
+});
