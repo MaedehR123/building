@@ -83,15 +83,18 @@ header .container {
 
 /* ================= HERO ================= */
 .hero {
-    position: relative;
-    min-height: 100vh;
     background:
-        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80")
-        center/cover no-repeat fixed;
-    display: flex;
-    align-items: center;
-    padding-top: 100px;
+        linear-gradient(
+            to left,
+            rgba(2,6,23,.95),
+            rgba(2,6,23,.65),
+            rgba(2,6,23,.95)
+        ),
+        url("imgs/hero.jpg");
+    background-size: cover;
+    background-position: center;
 }
+
 
 .hero::before {
     content: "";
