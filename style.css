@@ -1,67 +1,404 @@
+/* =========================================================
+   ROOT VARIABLES (تعریف متغیرهای اصلی پروژه)
+   ========================================================= */
 :root {
---gold:#d4af37;
---dark:#020617;
---glass:rgba(255,255,255,.06);
+    --gold: #d4af37;
+    --dark: #020617;
+    --glass: rgba(255,255,255,.06);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:IRANSans}
-body{background:var(--dark);color:#fff;padding-top:80px}
 
-/* HEADER */
-header{position:fixed;top:0;width:100%;background:rgba(0,0,0,.6);backdrop-filter:blur(12px);z-index:1000}
-.container{max-width:1200px;margin:auto;padding:20px;display:flex;justify-content:space-between}
-.logo{color:var(--gold);font-weight:bold}
-
-/* HERO */
-.hero{min-height:100vh;background:url("imgs/hero.jpg") center/cover fixed;display:flex;align-items:center}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to left,rgba(0,0,0,.9),rgba(0,0,0,.5))}
-.hero-content{position:relative;max-width:700px}
-.hero span{color:var(--gold)}
-
-.btn-primary,.btn-cta{
-display:inline-block;margin-top:25px;padding:16px 40px;
-border-radius:40px;background:var(--gold);color:#000;font-weight:bold;
-box-shadow:0 30px 70px rgba(212,175,55,.7);transition:.4s
-}
-.btn-primary:hover,.btn-cta:hover{transform:translateY(-6px) scale(1.05)}
-
-/* LUX DIVIDER */
-.lux-divider{
-height:1px;margin:120px auto;
-background:linear-gradient(90deg,transparent,var(--gold),transparent);
-box-shadow:0 0 25px var(--gold)
+/* =========================================================
+   RESET & BASE STYLES
+   ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: IRANSans;
 }
 
-/* SERVICES / CARDS */
-.services-section,.projects,.team-section,.contact-section{
-padding:120px 20px;text-align:center
+body {
+    background: var(--dark);
+    color: #fff;
+    padding-top: 80px;
 }
 
-.service-cards,.project-gallery,.team-members{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:50px;max-width:1200px;margin:auto
+a{
+    text-decoration: none;
 }
 
-.service-card,.project-item,.team-member,.contact-form{
-background:var(--glass);padding:40px;border-radius:26px;
-box-shadow:0 30px 80px rgba(0,0,0,.7);
-transition:.6s;position:relative;overflow:hidden
+
+/* =========================================================
+   HEADER (نسخه اولیه)
+   ========================================================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,.6);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
 }
 
-.service-card i{font-size:32px;color:var(--gold);margin-bottom:15px}
-
-/* MOUSE LIGHT */
-.mouse-light::before{
-content:"";position:absolute;width:300px;height:300px;
-background:radial-gradient(circle,rgba(212,175,55,.25),transparent 70%);
-top:var(--y);left:var(--x);transform:translate(-50%,-50%);
-opacity:0;transition:.3s
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
 }
-.mouse-light:hover::before{opacity:1}
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(80px);transition:1.2s}
-.reveal.show{opacity:1;transform:none}
+.logo {
+    color: var(--gold);
+    font-weight: bold;
+}
 
-/* FOOTER */
-footer{text-align:center;padding:40px;color:#aaa}
+
+/* =========================================================
+   HERO SECTION (نسخه اولیه)
+   ========================================================= */
+
+.hero {
+    min-height: 87vh;
+    background: url("imgs/hero.jpg") center/cover fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left, rgba(0,0,0,.9), rgba(0,0,0,.4));
+}
+
+.hero-content {
+    position: relative;
+    max-width: 850px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 46px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+     display:block;
+    color:var(--gold);
+    font-size:56px;
+    margin-top:10px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    /* flex-wrap: wrap; */
+}
+
+.hero-actions p {
+    font-size: 16px;
+    opacity: .9;
+    max-width: 420px;
+    opacity: .9;
+}
+
+
+/* اصلاح فلکس فقط برای hero */
+.hero-content.container{
+    display: flex;
+    flex-direction: column;   /* زیر هم */
+    align-items: center;
+}
+
+
+/* =========================================================
+   BUTTON (نسخه نهایی)
+   ========================================================= */
+.btn-primary {
+    padding: 14px 38px;
+    border-radius: 40px;
+    background: var(--gold);
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 25px 60px rgba(212,175,55,.6);
+    transition: .4s;
+    white-space: nowrap;
+}
+
+.btn-primary:hover {
+    transform: translateY(-6px) scale(1.05);
+}
+
+
+/* =========================================================
+   RESPONSIVE (MOBILE)
+   ========================================================= */
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero-content {
+        text-align: center;
+        margin: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        background: #020617;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   BUTTONS (نسخه عمومی)
+   ========================================================= */
+.btn-primary,
+.btn-cta {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 16px 40px;
+    border-radius: 40px;
+    background: var(--gold);
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 30px 70px rgba(212,175,55,.7);
+    transition: .4s;
+}
+
+.btn-primary:hover,
+.btn-cta:hover {
+    transform: translateY(-6px) scale(1.05);
+}
+
+
+/* =========================================================
+   LUX DIVIDER
+   ========================================================= */
+.lux-divider {
+    height: 1px;
+    margin: 120px auto;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    box-shadow: 0 0 25px var(--gold);
+}
+
+
+/* =========================================================
+   SECTIONS & CARDS
+   ========================================================= */
+.services-section,
+.projects,
+.team-section,
+.contact-section {
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.service-cards,
+.project-gallery,
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.service-card,
+.project-item,
+.team-member,
+.contact-form {
+    background: var(--glass);
+    padding: 40px;
+    border-radius: 26px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.7);
+    transition: .6s;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card i {
+    font-size: 32px;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   MOUSE LIGHT EFFECT
+   ========================================================= */
+.mouse-light::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212,175,55,.25), transparent 70%);
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .3s;
+}
+
+.mouse-light:hover::before {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL ANIMATION
+   ========================================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: 1.2s;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #aaa;
+}
+
+
+/* =========================================================
+   ROOT VARIABLES (نسخه تکراری – بدون حذف)
+   ========================================================= */
+:root {
+    --gold: #d4af37;
+    --dark: #020617;
+    --glass: rgba(255,255,255,.06);
+}
+
+
+/* =========================================================
+   RESET & BODY (نسخه دوم)
+   ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: IRANSans;
+}
+
+body {
+    background: var(--dark);
+    color: #fff;
+    padding-top: 90px;
+}
+
+
+/* =========================================================
+   HEADER (نسخه تکمیلی)
+   ========================================================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,.65);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+    padding: 5px 0;
+    transition: .3s;
+}
+
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: .3s;
+}
+
+.nav-links li a:hover {
+    color: var(--gold);
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
