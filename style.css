@@ -183,7 +183,7 @@ header {
 
 .btn-cta {
     display: inline-block;
-    margin-top: 25px;
+    margin-top: 80px;
     padding: 16px 40px;
     border-radius: 40px;
     background: var(--gold);
@@ -214,9 +214,15 @@ header {
    SECTIONS & CARDS
    ========================================================= */
    .section-title{
-    margin-bottom: 50px;
+    margin-top: -20px;
+    margin-bottom: 60px;
     font-size: xx-large;
+   }
 
+
+   .section-subtitle{
+    margin-bottom: 40px;
+    font-size: large;
    }
 
 
@@ -257,6 +263,14 @@ header {
     margin-bottom: 15px;
 }
 
+.service-card h3{
+    margin-bottom: 20px;
+    font-size: x-large;
+}
+
+.service-card p{
+    font-size: small;
+}
 
 /* =========================================================
    MOUSE LIGHT EFFECT
