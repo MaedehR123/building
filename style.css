@@ -128,7 +128,7 @@ header {
     color: #000;
     font-weight: bold;
     font-size: 14px;
-    box-shadow: 0 25px 60px rgba(212,175,55,.6);
+    box-shadow: 0 25px 70px rgba(212,175,55,.6);
     transition: .4s;
     white-space: nowrap;
 }
@@ -189,7 +189,7 @@ header {
     background: var(--gold);
     color: #000;
     font-weight: bold;
-    box-shadow: 0 30px 70px rgba(212,175,55,.7);
+    box-shadow: 0 10px 80px rgba(212,175,55,.7);
     transition: .4s;
 }
 
@@ -213,6 +213,13 @@ header {
 /* =========================================================
    SECTIONS & CARDS
    ========================================================= */
+   .section-title{
+    margin-bottom: 50px;
+    font-size: xx-large;
+
+   }
+
+
 .services-section,
 .projects,
 .team-section,
