@@ -1,25 +1,18 @@
-// Mobile Menu
-const toggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.nav-links');
-if(toggle){toggle.addEventListener('click',()=>nav.classList.toggle('show'));}
+// MENU
+document.querySelector('.menu-toggle')
+?.addEventListener('click',()=>document.querySelector('.nav-links').classList.toggle('show'))
 
-// Team details
-function toggleDetails(card){card.classList.toggle("active");}
+// SCROLL REVEAL
+const obs=new IntersectionObserver(e=>{
+e.forEach(x=>x.isIntersecting&&x.target.classList.add('show'))
+},{threshold:.2})
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))
 
-// Scroll animations
-const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){entry.target.classList.add("show");}
-    });
-},{threshold:.2});
-document.querySelectorAll("section, .service-card, .project-item, .team-member")
-.forEach(el=>{el.classList.add("hidden");observer.observe(el);});
-
-// Parallax Hero
-window.addEventListener("scroll",()=>{
-    const scrolled=window.scrollY;
-    const heroContent=document.querySelector(".hero-content");
-    const heroBg=document.querySelector(".hero");
-    if(heroContent){heroContent.style.transform=`translateY(${scrolled*0.25}px)`;}
-    if(heroBg){heroBg.style.backgroundPositionY=`${scrolled*0.3}px`;}
-});
+// MOUSE LIGHT EFFECT
+document.querySelectorAll('.mouse-light').forEach(card=>{
+card.addEventListener('mousemove',e=>{
+const r=card.getBoundingClientRect()
+card.style.setProperty('--x',`${e.clientX-r.left}px`)
+card.style.setProperty('--y',`${e.clientY-r.top}px`)
+})
+})
