@@ -66,6 +66,7 @@ header {
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-top:-30px ;
 }
 
 .hero-overlay {
@@ -97,7 +98,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 35px;
     /* flex-wrap: wrap; */
 }
 
@@ -176,22 +177,10 @@ header {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* =========================================================
    BUTTONS (نسخه عمومی)
    ========================================================= */
-.btn-primary,
+
 .btn-cta {
     display: inline-block;
     margin-top: 25px;
