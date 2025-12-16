@@ -561,3 +561,70 @@ header {
 
 
 
+/* CONTACT SOCIALS */
+#contact h2{
+    font-size: xx-large;
+    margin-bottom: 15px;
+
+}
+
+
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(255,255,255,.05);
+    padding: 12px 20px;
+    border-radius: 26px;
+    box-shadow: 0 10px 40px rgba(212,175,55,.25);
+    transition: .4s;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+}
+
+.social-link i {
+    font-size: 20px;
+}
+
+/* hover effect */
+.social-link:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 60px rgba(212,175,55,.45);
+}
+
+/* network specific colors (subtle gradient) */
+.social-link.whatsapp:hover {
+    background: #25D366;
+    color: #fff;
+}
+
+.social-link.instagram:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: #fff;
+}
+
+.social-link.telegram:hover {
+    background: #0088cc;
+    color: #fff;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .contact-socials {
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
