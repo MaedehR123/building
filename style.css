@@ -348,32 +348,144 @@ footer {
     color: #aaa;
 }
 
+/* =========================================================
+   TEAM SECTION
+   ========================================================= */
+
+.team-section {
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 32px;
+    margin-bottom: 80px;
+}
+
+/* grid */
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* card */
+.team-member {
+    background: var(--glass);
+    padding: 50px 40px;
+    border-radius: 26px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.7);
+    position: relative;
+    overflow: hidden;
+    transition: .6s;
+}
+
+/* hover lift */
+.team-member:hover {
+    transform: translateY(-10px);
+}
 
 /* =========================================================
-   ROOT VARIABLES (نسخه تکراری – بدون حذف)
+   TEAM AVATAR (Luxury Glass + Gold)
    ========================================================= */
-:root {
-    --gold: #d4af37;
-    --dark: #020617;
-    --glass: rgba(255,255,255,.06);
+
+.team-avatar {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--gold);
+
+    background: rgba(255,255,255,.05);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(212,175,55,.35);
+    box-shadow:
+        0 0 0 1px rgba(212,175,55,.15),
+        0 15px 50px rgba(212,175,55,.25),
+        inset 0 0 25px rgba(212,175,55,.12);
+
+    position: relative;
+    transition: .6s;
 }
 
+/* gold divider under avatar */
+.team-avatar::after {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    box-shadow: 0 0 15px var(--gold);
+}
+
+/* avatar hover */
+.team-member:hover .team-avatar {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow:
+        0 0 0 1px rgba(212,175,55,.3),
+        0 25px 70px rgba(212,175,55,.45),
+        inset 0 0 35px rgba(212,175,55,.2);
+}
 
 /* =========================================================
-   RESET & BODY (نسخه دوم)
+   TEXT
    ========================================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: IRANSans;
+
+.team-member h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
 }
 
-body {
-    background: var(--dark);
-    color: #fff;
-    padding-top: 90px;
+.team-member p {
+    font-size: 13px;
+    opacity: .7;
+    letter-spacing: .5px;
 }
+
+/* =========================================================
+   LEADER (Project Manager Highlight)
+   ========================================================= */
+
+.team-member.leader {
+    border: 1px solid rgba(212,175,55,.35);
+    box-shadow:
+        0 0 40px rgba(212,175,55,.25),
+        0 30px 90px rgba(0,0,0,.85);
+}
+
+/* =========================================================
+   MOUSE LIGHT EFFECT (Luxury tuned)
+   ========================================================= */
+
+.team-member.mouse-light::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212,175,55,.18), transparent 70%);
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .3s;
+}
+
+.team-member.mouse-light:hover::before {
+    opacity: 1;
+}
+
 
 
 /* =========================================================
@@ -442,4 +554,10 @@ header {
     font-size: 22px;
     cursor: pointer;
 }
+
+
+
+
+
+
 
