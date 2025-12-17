@@ -88,9 +88,9 @@ header {
 }
 
 .hero h1 span {
-     display:block;
+     /* display:block; */
     color:var(--gold);
-    font-size:56px;
+    font-size:58px;
     /* margin-top:10px; */
 }
 
