@@ -697,3 +697,92 @@ header {
         transform: translateX(50%);
     }
 }
+
+
+
+
+
+
+/* ================= PROJECT SWIPER ================= */
+
+.project-swiper{
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 0 80px;
+    position: relative;
+}
+
+.project-card{
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  height: 380px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.75);
+}
+
+.project-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .8s;
+}
+
+/* overlay info */
+.project-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(0,0,0,.85),
+      rgba(0,0,0,.2)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  opacity: 0;
+  transition: .6s;
+}
+
+.project-overlay h3{
+  color: var(--gold);
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.project-overlay ul{
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.9;
+  opacity: .9;
+}
+
+/* hover effect */
+.project-card:hover img{
+  transform: scale(1.1);
+}
+
+.project-card:hover .project-overlay{
+  opacity: 1;
+}
+
+/* Swiper buttons */
+.swiper-button-next,
+.swiper-button-prev{
+  color: var(--gold);
+}
+
+.swiper-pagination-bullet{
+  background: rgba(255,255,255,.4);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active{
+  background: var(--gold);
+}
+
+/* mobile */
+@media(max-width:768px){
+  .project-card{
+    height: 300px;
+  }
+}
