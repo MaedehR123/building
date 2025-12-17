@@ -560,8 +560,10 @@ header {
 
 
 
+/* =========================================================
+    CONTACT SOCIALS 
+ ========================================================= */
 
-/* CONTACT SOCIALS */
 #contact h2{
     font-size: xx-large;
     margin-bottom: 15px;
@@ -628,3 +630,55 @@ header {
         align-items: center;
     }
 }
+
+
+
+
+
+
+
+/* =========================================================
+    scrolling
+ ========================================================= */
+
+
+    .our-scrolling-ticker {
+    background: rgba(0,0,0,.6);
+      padding: 15px 0;
+    }
+
+    .scrolling-ticker-box {
+      position: relative;
+      display: flex;
+      overflow: hidden;
+      user-select: none;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .scrolling-content {
+      flex-shrink: 0;
+      display: flex;
+      gap: 20px;
+      min-width: 100%;
+      animation: scroll 21s linear infinite;
+    }
+
+    .scrolling-content div {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.2em;
+      color: #fffafa;
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(50%);
+      }
+    }
