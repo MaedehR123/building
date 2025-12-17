@@ -2,30 +2,30 @@
    ROOT VARIABLES (تعریف متغیرهای اصلی پروژه)
    ========================================================= */
 :root {
-    --gold: #d4af37;
-    --dark: #020617;
-    --glass: rgba(255,255,255,.06);
+    --gold: #d4af37; /* رنگ طلایی برای المان‌های شاخص */
+    --dark: #020617; /* رنگ زمینه تاریک کلی سایت */
+    --glass: rgba(255,255,255,.06); /* رنگ شیشه‌ای شفاف برای کارت‌ها */
 }
 
 
 /* =========================================================
-   RESET & BASE STYLES
+   RESET & BASE STYLES (ریست و استایل پایه)
    ========================================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: IRANSans;
+    font-family: IRANSans; /* فونت اصلی سایت */
 }
 
 body {
-    background: var(--dark);
-    color: #fff;
-    padding-top: 80px;
+    background: var(--dark); /* پس‌زمینه تاریک */
+    color: #fff; /* رنگ متن سفید */
+    padding-top: 80px; /* فاصله برای هدر ثابت */
 }
 
 a{
-    text-decoration: none;
+    text-decoration: none; /* لینک‌ها بدون خط زیر */
 }
 
 
@@ -33,12 +33,12 @@ a{
    HEADER (نسخه اولیه)
    ========================================================= */
 header {
-    position: fixed;
+    position: fixed; /* هدر ثابت */
     top: 0;
     width: 100%;
     background: rgba(0,0,0,.6);
-    backdrop-filter: blur(12px);
-    z-index: 1000;
+    backdrop-filter: blur(12px); /* افکت شفاف و بلور */
+    z-index: 1000; /* جلوتر از سایر المان‌ها */
 }
 
 .container {
@@ -46,7 +46,7 @@ header {
     margin: auto;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* لوگو و منو کنار هم */
 }
 
 .logo {
@@ -58,9 +58,8 @@ header {
 /* =========================================================
    HERO SECTION (نسخه اولیه)
    ========================================================= */
-
 .hero {
-    min-height: 100vh;
+    min-height: 100vh; /* کل ارتفاع صفحه */
     background: url("imgs/hero.jpg") center/cover fixed;
     display: flex;
     align-items: center;
@@ -88,10 +87,8 @@ header {
 }
 
 .hero h1 span {
-     /* display:block; */
     color:var(--gold);
     font-size:68px;
-    /* margin-top:10px; */
 }
 
 .hero-actions {
@@ -99,16 +96,13 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 35px;
-    /* flex-wrap: wrap; */
 }
 
 .hero-actions p {
     font-size: 18px;
     opacity: .9;
     max-width: 420px;
-    opacity: .9;
 }
-
 
 /* اصلاح فلکس فقط برای hero */
 .hero-content.container{
@@ -177,10 +171,10 @@ header {
     }
 }
 
+
 /* =========================================================
    BUTTONS (نسخه عمومی)
    ========================================================= */
-
 .btn-cta {
     display: inline-block;
     margin-top: 80px;
@@ -200,7 +194,7 @@ header {
 
 
 /* =========================================================
-   LUX DIVIDER
+   LUX DIVIDER (خط جداکننده لوکس)
    ========================================================= */
 .lux-divider {
     height: 1px;
@@ -211,18 +205,15 @@ header {
 
 
 /* =========================================================
-   SECTIONS & CARDS
+   SECTIONS & CARDS (کارت‌ها و بخش‌ها)
    ========================================================= */
-   
-   /* کارت پروژه */
 .project-item{
     position: relative;
     overflow: hidden;
     border-radius: 26px;
-    height: 100%; /* مهم */
+    height: 100%; /* ارتفاع کارت مهم */
 }
 
-/* تصویر پروژه */
 .project-item img{
     width: 100%;
     height: 100%;
@@ -230,13 +221,10 @@ header {
     display: block;
 }
 
-
-
-   .section-subtitle{
+.section-subtitle{
     margin-bottom: 40px;
     font-size: large;
-   }
-
+}
 
 .services-section,
 .projects,
@@ -284,14 +272,11 @@ header {
     font-size: small;
 }
 
-
-
 .projects h2{
     margin-top: -100px;
     margin-bottom: 100px;
     font-size: xx-large;
 }
-
 
 .project-gallery{
     display: grid;
@@ -303,8 +288,9 @@ header {
     height: 320px; /* ارتفاع یکسان */
 }
 
+
 /* =========================================================
-   MOUSE LIGHT EFFECT
+   MOUSE LIGHT EFFECT (افکت نور موس)
    ========================================================= */
 .mouse-light::before {
     content: "";
@@ -325,7 +311,7 @@ header {
 
 
 /* =========================================================
-   SCROLL REVEAL ANIMATION
+   SCROLL REVEAL ANIMATION (انیمیشن ظاهر شدن هنگام اسکرول)
    ========================================================= */
 .reveal {
     opacity: 0;
@@ -348,10 +334,10 @@ footer {
     color: #aaa;
 }
 
-/* =========================================================
-   TEAM SECTION
-   ========================================================= */
 
+/* =========================================================
+   TEAM SECTION (بخش تیم)
+   ========================================================= */
 .team-section {
     padding: 120px 20px;
     text-align: center;
@@ -362,7 +348,6 @@ footer {
     margin-bottom: 80px;
 }
 
-/* grid */
 .team-members {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -371,7 +356,6 @@ footer {
     margin: auto;
 }
 
-/* card */
 .team-member {
     background: var(--glass);
     padding: 50px 40px;
@@ -382,15 +366,14 @@ footer {
     transition: .6s;
 }
 
-/* hover lift */
 .team-member:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px); /* بالا آمدن کارت هنگام هاور */
 }
 
-/* =========================================================
-   TEAM AVATAR (Luxury Glass + Gold)
-   ========================================================= */
 
+/* =========================================================
+   TEAM AVATAR (آواتار اعضای تیم)
+   ========================================================= */
 .team-avatar {
     width: 96px;
     height: 96px;
@@ -419,7 +402,6 @@ footer {
     transition: .6s;
 }
 
-/* gold divider under avatar */
 .team-avatar::after {
     content: "";
     position: absolute;
@@ -430,7 +412,6 @@ footer {
     box-shadow: 0 0 15px var(--gold);
 }
 
-/* avatar hover */
 .team-member:hover .team-avatar {
     transform: translateY(-8px) scale(1.05);
     box-shadow:
@@ -439,10 +420,10 @@ footer {
         inset 0 0 35px rgba(212,175,55,.2);
 }
 
-/* =========================================================
-   TEXT
-   ========================================================= */
 
+/* =========================================================
+   TEAM TEXT
+   ========================================================= */
 .team-member h3 {
     font-size: 18px;
     margin-bottom: 6px;
@@ -454,38 +435,16 @@ footer {
     letter-spacing: .5px;
 }
 
-/* =========================================================
-   LEADER (Project Manager Highlight)
-   ========================================================= */
 
+/* =========================================================
+   LEADER (نمایش مدیر پروژه)
+   ========================================================= */
 .team-member.leader {
     border: 1px solid rgba(212,175,55,.35);
     box-shadow:
         0 0 40px rgba(212,175,55,.25),
         0 30px 90px rgba(0,0,0,.85);
 }
-
-/* =========================================================
-   MOUSE LIGHT EFFECT (Luxury tuned)
-   ========================================================= */
-
-.team-member.mouse-light::before {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(212,175,55,.18), transparent 70%);
-    top: var(--y);
-    left: var(--x);
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: .3s;
-}
-
-.team-member.mouse-light:hover::before {
-    opacity: 1;
-}
-
 
 
 /* =========================================================
@@ -556,20 +515,13 @@ header {
 }
 
 
-
-
-
-
 /* =========================================================
-    CONTACT SOCIALS 
- ========================================================= */
-
+   CONTACT SOCIALS 
+   ========================================================= */
 #contact h2{
     font-size: xx-large;
     margin-bottom: 15px;
-
 }
-
 
 .contact-socials {
     display: flex;
@@ -600,13 +552,11 @@ header {
     font-size: 20px;
 }
 
-/* hover effect */
 .social-link:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 15px 60px rgba(212,175,55,.45);
 }
 
-/* network specific colors (subtle gradient) */
 .social-link.whatsapp:hover {
     background: #25D366;
     color: #fff;
@@ -622,7 +572,6 @@ header {
     color: #fff;
 }
 
-/* responsive */
 @media (max-width: 768px) {
     .contact-socials {
         gap: 15px;
@@ -632,13 +581,9 @@ header {
 }
 
 
-
-
-
 /* =========================================================
    CORPORATE SCROLLING TICKER
    ========================================================= */
-
 .our-scrolling-ticker {
     background: linear-gradient(
         90deg,
@@ -688,7 +633,7 @@ header {
   opacity: .85;
   text-shadow: 0 0 10px rgba(212,175,55,.4);
 }
-/* حرکت نرم‌تر و شرکتی */
+
 @keyframes scroll {
     from {
         transform: translateX(0);
@@ -699,19 +644,16 @@ header {
 }
 
 
-
-
-
-
 /* ================= PROJECT SWIPER ================= */
-
+/* کانتینر اصلی اسلایدر پروژه‌ها */
 .project-swiper{
   max-width: 1200px;
   margin: auto;
   padding: 40px 0 80px;
-    position: relative;
+  position: relative;
 }
 
+/* کارت پروژه */
 .project-card{
   position: relative;
   border-radius: 26px;
@@ -727,7 +669,7 @@ header {
   transition: .8s;
 }
 
-/* overlay info */
+/* overlay اطلاعات پروژه */
 .project-overlay{
   position: absolute;
   inset: 0;
@@ -756,7 +698,6 @@ header {
   opacity: .9;
 }
 
-/* hover effect */
 .project-card:hover img{
   transform: scale(1.1);
 }
@@ -764,6 +705,8 @@ header {
 .project-card:hover .project-overlay{
   opacity: 1;
 }
+
+
 /* ================= SWIPER NAV BUTTONS OUTSIDE ================= */
 .swiper-button-next,
 .swiper-button-prev {
@@ -781,7 +724,7 @@ header {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* بیرون از محدوده کارت ها */
+/* موقعیت فلش‌ها خارج از کارت‌ها */
 .swiper-button-next { right: -70px; }
 .swiper-button-prev { left: -70px; }
 
@@ -801,7 +744,7 @@ header {
     transform: scale(1.25);
 }
 
-/* مطمئن شدن که دکمه ها بیرون از کارت هستند */
+/* اطمینان از موقعیت والد برای فلش‌ها */
 .project-swiper {
     position: relative; /* موقعیت والد برای فلش ها */
     padding: 40px 80px 80px; /* جا برای دکمه ها */
