@@ -635,50 +635,66 @@ header {
 
 
 
-
-
 /* =========================================================
-    scrolling
- ========================================================= */
+   CORPORATE SCROLLING TICKER
+   ========================================================= */
+
+.our-scrolling-ticker {
+    background: linear-gradient(
+        90deg,
+        rgba(2,6,23,.95),
+        rgba(10,10,10,.85),
+        rgba(2,6,23,.95)
+    );
+    border-top: 1px solid rgba(212,175,55,.25);
+    border-bottom: 1px solid rgba(212,175,55,.25);
+    padding: 18px 0;
+    overflow: hidden;
+}
+
+.scrolling-ticker-box {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+}
+
+.scrolling-content {
+    display: flex;
+    gap: 40px;
+    min-width: 100%;
+    animation: scroll 26s linear infinite;
+}
+
+.scrolling-content div {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    color: rgba(255,255,255,.85);
+    white-space: nowrap;
+}
+
+.scrolling-content span {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.tick-divider {
+    width: 22px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    box-shadow: 0 0 10px var(--gold);
+}
 
 
-    .our-scrolling-ticker {
-    background: rgba(0,0,0,.6);
-      padding: 15px 0;
-    }
-
-    .scrolling-ticker-box {
-      position: relative;
-      display: flex;
-      overflow: hidden;
-      user-select: none;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .scrolling-content {
-      flex-shrink: 0;
-      display: flex;
-      gap: 20px;
-      min-width: 100%;
-      animation: scroll 21s linear infinite;
-    }
-
-    .scrolling-content div {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 1.2em;
-      color: #fffafa;
-    }
-
-    @keyframes scroll {
-      from {
+/* حرکت نرم‌تر و شرکتی */
+@keyframes scroll {
+    from {
         transform: translateX(0);
-      }
-      to {
-        transform: translateX(50%);
-      }
     }
+    to {
+        transform: translateX(50%);
+    }
+}
