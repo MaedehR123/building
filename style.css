@@ -681,14 +681,13 @@ header {
     font-weight: 700;
 }
 
-.tick-divider {
-    width: 22px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    box-shadow: 0 0 10px var(--gold);
+.ticker-icon{
+  color: var(--gold);
+  font-size: 16px;
+  margin: 0 12px;
+  opacity: .85;
+  text-shadow: 0 0 10px rgba(212,175,55,.4);
 }
-
-
 /* حرکت نرم‌تر و شرکتی */
 @keyframes scroll {
     from {
