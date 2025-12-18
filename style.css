@@ -205,34 +205,53 @@ header {
 
 /* ===================== ABOUT US ===================== */
 .about-section {
+    position: relative;
+    background-image: url('imgs/AboutUs.webp'); /* مسیر عکس خودت */
+    background-size: cover; /* پر کردن کل بخش */
+    background-position: center; /* وسط تصویر */
+    background-repeat: no-repeat;
+    color: #fff; /* رنگ متن روی عکس */
     padding: 120px 20px;
-    text-align: center;
+}
+
+/* پوشش تاریک برای خوانایی متن */
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* میزان تاریکی */
+    z-index: 1;
 }
 
 .about-container {
     max-width: 1000px;
     margin: auto;
+    position: relative;
+    z-index: 2; /* متن روی پوشش */
 }
 
 .about-content {
     background: var(--glass);
     padding: 70px 60px;
     border-radius: 30px;
-    box-shadow: 0 40px 100px rgba(0,0,0,.75);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.75);
     position: relative;
     overflow: hidden;
 }
 
 .about-content::before {
-    content:"";
-    position:absolute;
-    top:0;
-    left:50%;
-    transform:translateX(-50%);
-    width:140px;
-    height:2px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 2px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    box-shadow:0 0 25px var(--gold);
+    box-shadow: 0 0 25px var(--gold);
 }
 
 .about-content h2 {
@@ -243,7 +262,7 @@ header {
 .about-content p {
     font-size: 16px;
     line-height: 2;
-    opacity: .9;
+    opacity: 0.9;
     margin-bottom: 25px;
     text-align: justify;
 }
@@ -256,17 +275,17 @@ header {
 .about-features {
     margin-top: 45px;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 22px;
 }
 
 .about-features div {
-    background: rgba(255,255,255,.04);
+    background: rgba(255, 255, 255, 0.04);
     padding: 18px 22px;
     border-radius: 18px;
     font-size: 14px;
-    box-shadow: inset 0 0 25px rgba(212,175,55,.12);
-    transition: .4s;
+    box-shadow: inset 0 0 25px rgba(212, 175, 55, 0.12);
+    transition: 0.4s;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -279,13 +298,14 @@ header {
 
 .about-features div:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 55px rgba(212,175,55,.3);
+    box-shadow: 0 20px 55px rgba(212, 175, 55, 0.3);
 }
 
 .about-cta {
     margin-top: 50px;
     display: inline-block;
 }
+
 /* ===================== WHY CHOOSE US ===================== */
 .why-us-section {
     padding: 120px 20px;
