@@ -865,89 +865,69 @@ header {
 }
 
 
-
-
-
 /* =========================================================
-   LUXURY COUNTERS (ENGINEERING STYLE)
+   ULTRA MINIMAL ENGINEERING COUNTERS
    ========================================================= */
 
 .about-counters{
     margin-top: 60px;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap: 30px;
-}
-
-.counter-item{
-    padding: 28px 22px 30px;
-    border-radius: 22px;
-    background: rgba(255,255,255,.035);
-    box-shadow:
-        inset 0 0 20px rgba(212,175,55,.12),
-        0 20px 60px rgba(0,0,0,.65);
-    transition: .6s;
-    position: relative;
-    overflow: hidden;
-}
-
-/* hover lift */
-.counter-item:hover{
-    transform: translateY(-8px);
-    box-shadow:
-        inset 0 0 35px rgba(212,175,55,.25),
-        0 30px 80px rgba(212,175,55,.35);
-}
-
-/* icon */
-.counter-icon{
-    width: 46px;
-    height: 46px;
-    margin: 0 auto 18px;
-    border-radius: 50%;
-    display: flex;
+    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+    gap: 28px;
     align-items: center;
-    justify-content: center;
+}
 
-    font-size: 20px;
+/* آیتم شمارنده – بدون بکگراند */
+.counter-item{
+    text-align: center;
+    position: relative;
+    padding: 8px 0;
+}
+
+/* آیکن */
+.counter-icon{
+    font-size: 18px;
     color: var(--gold);
-
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(212,175,55,.35);
-
-    box-shadow:
-        0 0 0 1px rgba(212,175,55,.15),
-        0 10px 30px rgba(212,175,55,.25);
-
-    transition: .6s;
+    margin-bottom: 8px;
+    display: inline-block;
+    transition: .4s;
 }
 
-/* subtle icon animation */
-.counter-item:hover .counter-icon{
-    transform: translateY(-6px) rotate(-6deg);
-    box-shadow:
-        0 0 0 1px rgba(212,175,55,.35),
-        0 20px 50px rgba(212,175,55,.45);
-}
-
-/* number */
+/* عدد */
 .counter{
     display: block;
-    font-size: 26px;        /* کوچکتر و شیک */
+    font-size: 24px;
     font-weight: 600;
+    letter-spacing: 1px;
     color: #fff;
-    letter-spacing: .5px;
     margin-bottom: 6px;
 }
 
-/* label */
+/* خط طلایی ظریف زیر عدد */
+.counter::after{
+    content:"";
+    display:block;
+    width:32px;
+    height:2px;
+    margin:8px auto 0;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity:.85;
+}
+
+/* توضیح */
 .counter-item p{
-    font-size: 13px;
-    opacity: .7;
+    font-size: 16px;
+    opacity: .6;
     letter-spacing: .4px;
 }
 
-/* mobile */
+/* hover – بسیار ظریف */
+.counter-item:hover .counter-icon{
+    transform: translateY(-4px);
+    text-shadow: 0 0 12px rgba(212,175,55,.6);
+}
+
+/* موبایل */
 @media(max-width:768px){
     .counter{
         font-size: 22px;
