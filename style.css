@@ -202,19 +202,18 @@ header {
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
     box-shadow: 0 0 25px var(--gold);
 }
-
 /* ===================== ABOUT US ===================== */
 .about-section {
     position: relative;
-    background-image: url('imgs/AboutUs.webp'); /* مسیر عکس خودت */
-    background-size: cover; /* پر کردن کل بخش */
-    background-position: center; /* وسط تصویر */
+    background-image: url('imgs/AboutUs.webp'); /* مسیر عکس */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    color: #fff; /* رنگ متن روی عکس */
+    color: #fff;
     padding: 120px 20px;
+    overflow: hidden;
 }
 
-/* پوشش تاریک برای خوانایی متن */
 .about-section::before {
     content: "";
     position: absolute;
@@ -222,7 +221,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* میزان تاریکی */
+    background: rgba(0, 0, 0, 0.7); /* هاله مشکی */
     z-index: 1;
 }
 
@@ -230,14 +229,14 @@ header {
     max-width: 1000px;
     margin: auto;
     position: relative;
-    z-index: 2; /* متن روی پوشش */
+    z-index: 2;
 }
 
 .about-content {
     background: var(--glass);
     padding: 70px 60px;
     border-radius: 30px;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 40px 100px rgba(0,0,0,.75);
     position: relative;
     overflow: hidden;
 }
@@ -250,8 +249,8 @@ header {
     transform: translateX(-50%);
     width: 140px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    box-shadow: 0 0 25px var(--gold);
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent);
+    box-shadow: 0 0 25px rgba(212,175,55,0.8);
 }
 
 .about-content h2 {
@@ -262,49 +261,102 @@ header {
 .about-content p {
     font-size: 16px;
     line-height: 2;
-    opacity: 0.9;
+    opacity: .9;
     margin-bottom: 25px;
     text-align: justify;
 }
 
 .about-content strong {
-    color: var(--gold);
+    color: var(--gold); /* طلایی برای متن قوی */
     font-weight: 600;
 }
 
 .about-features {
     margin-top: 45px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
     gap: 22px;
 }
 
 .about-features div {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255,255,255,.04);
     padding: 18px 22px;
     border-radius: 18px;
     font-size: 14px;
-    box-shadow: inset 0 0 25px rgba(212, 175, 55, 0.12);
-    transition: 0.4s;
+    box-shadow: inset 0 0 25px rgba(212,175,55,.12);
+    transition: .4s;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 .about-features div i {
-    color: var(--gold);
+    color: var(--gold); /* طلایی کردن آیکون‌ها */
     font-size: 20px;
 }
 
 .about-features div:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 55px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 55px rgba(212,175,55,.3);
 }
 
 .about-cta {
     margin-top: 50px;
     display: inline-block;
 }
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width: 1024px){
+    .about-content {
+        padding: 60px 40px;
+    }
+    .about-content h2 {
+        font-size: 30px;
+    }
+    .about-content p {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 768px){
+    .about-content {
+        padding: 50px 30px;
+        border-radius: 25px;
+    }
+    .about-content h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+    .about-content p {
+        font-size: 14px;
+    }
+    .about-features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media(max-width: 480px){
+    .about-content {
+        padding: 40px 20px;
+    }
+    .about-content h2 {
+        font-size: 24px;
+    }
+    .about-content p {
+        font-size: 13px;
+    }
+}
+
+/* ===================== PARALLAX EFFECT ===================== */
+.about-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 
 /* ===================== WHY CHOOSE US ===================== */
 .why-us-section {
