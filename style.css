@@ -204,6 +204,77 @@ header {
 }
 
 
+
+/* =========================================================
+   ULTRA MINIMAL ENGINEERING COUNTERS درباره ی ما
+   ========================================================= */
+
+.about-counters{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+    gap: 28px;
+    align-items: center;
+}
+
+/* آیتم شمارنده – بدون بکگراند */
+.counter-item{
+    text-align: center;
+    position: relative;
+    padding: 8px 0;
+}
+
+/* آیکن */
+.counter-icon{
+    font-size: 18px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    display: inline-block;
+    transition: .4s;
+}
+
+/* عدد */
+.counter{
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+/* خط طلایی ظریف زیر عدد */
+.counter::after{
+    content:"";
+    display:block;
+    width:32px;
+    height:2px;
+    margin:8px auto 0;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity:.85;
+}
+
+/* توضیح */
+.counter-item p{
+    font-size: 16px;
+    opacity: .6;
+    letter-spacing: .4px;
+}
+
+/* hover – بسیار ظریف */
+.counter-item:hover .counter-icon{
+    transform: translateY(-4px);
+    text-shadow: 0 0 12px rgba(212,175,55,.6);
+}
+
+/* موبایل */
+@media(max-width:768px){
+    .counter{
+        font-size: 22px;
+    }
+}
+
+
 /* =========================================================
    SECTIONS & CARDS (کارت‌ها و بخش‌ها)
    ========================================================= */
@@ -864,72 +935,3 @@ header {
     }
 }
 
-
-/* =========================================================
-   ULTRA MINIMAL ENGINEERING COUNTERS
-   ========================================================= */
-
-.about-counters{
-    margin-top: 60px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
-    gap: 28px;
-    align-items: center;
-}
-
-/* آیتم شمارنده – بدون بکگراند */
-.counter-item{
-    text-align: center;
-    position: relative;
-    padding: 8px 0;
-}
-
-/* آیکن */
-.counter-icon{
-    font-size: 18px;
-    color: var(--gold);
-    margin-bottom: 8px;
-    display: inline-block;
-    transition: .4s;
-}
-
-/* عدد */
-.counter{
-    display: block;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #fff;
-    margin-bottom: 6px;
-}
-
-/* خط طلایی ظریف زیر عدد */
-.counter::after{
-    content:"";
-    display:block;
-    width:32px;
-    height:2px;
-    margin:8px auto 0;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    opacity:.85;
-}
-
-/* توضیح */
-.counter-item p{
-    font-size: 16px;
-    opacity: .6;
-    letter-spacing: .4px;
-}
-
-/* hover – بسیار ظریف */
-.counter-item:hover .counter-icon{
-    transform: translateY(-4px);
-    text-shadow: 0 0 12px rgba(212,175,55,.6);
-}
-
-/* موبایل */
-@media(max-width:768px){
-    .counter{
-        font-size: 22px;
-    }
-}
