@@ -203,74 +203,179 @@ header {
     box-shadow: 0 0 25px var(--gold);
 }
 
+/* ===================== ABOUT US ===================== */
+.about-section {
+    padding: 120px 20px;
+    text-align: center;
+}
 
+.about-container {
+    max-width: 1000px;
+    margin: auto;
+}
 
-/* =========================================================
-   ULTRA MINIMAL ENGINEERING COUNTERS درباره ی ما
-   ========================================================= */
+.about-content {
+    background: var(--glass);
+    padding: 70px 60px;
+    border-radius: 30px;
+    box-shadow: 0 40px 100px rgba(0,0,0,.75);
+    position: relative;
+    overflow: hidden;
+}
 
-.about-counters{
-    margin-top: 60px;
+.about-content::before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:140px;
+    height:2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    box-shadow:0 0 25px var(--gold);
+}
+
+.about-content h2 {
+    font-size: 34px;
+    margin-bottom: 35px;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 2;
+    opacity: .9;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.about-content strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.about-features {
+    margin-top: 45px;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
-    gap: 28px;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 22px;
+}
+
+.about-features div {
+    background: rgba(255,255,255,.04);
+    padding: 18px 22px;
+    border-radius: 18px;
+    font-size: 14px;
+    box-shadow: inset 0 0 25px rgba(212,175,55,.12);
+    transition: .4s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-features div i {
+    color: var(--gold);
+    font-size: 20px;
+}
+
+.about-features div:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 55px rgba(212,175,55,.3);
+}
+
+.about-cta {
+    margin-top: 50px;
+    display: inline-block;
+}
+/* ===================== WHY CHOOSE US ===================== */
+.why-us-section {
+    padding: 120px 20px;
+    background: #020617;
+    text-align: center;
+    position: relative;
+}
+
+.why-us-section h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: var(--gold);
+}
+
+.why-intro {
+    font-size: 16px;
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    line-height: 1.8;
+}
+.why-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* سه کارت در هر ردیف */
+    gap: 30px; /* فاصله بین کارت‌ها */
+    max-width: 1200px;
+    margin: auto;
+}
+
+.why-card {
+    background: var(--glass);
+    padding: 35px 25px;
+    border-radius: 26px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.7);
+    transition: .6s;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.why-card i {
+    font-size: 32px;
+    color: var(--gold);
+    margin-bottom: 15px;
+    transition: transform .4s;
+}
+
+.why-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.why-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: .9;
+}
+
+/* اطمینان از چینش ستونی متن و کارت‌ها */
+.why-us-section .container {
+    display: flex;
+    flex-direction: column; /* چینش ستونی: متن بالای کارت‌ها */
     align-items: center;
 }
 
-/* آیتم شمارنده – بدون بکگراند */
-.counter-item{
+/* فاصله متن از کارت‌ها */
+.why-intro {
+    margin-bottom: 60px; /* کمی فاصله از کارت‌ها */
     text-align: center;
-    position: relative;
-    padding: 8px 0;
 }
 
-/* آیکن */
-.counter-icon{
-    font-size: 18px;
-    color: var(--gold);
-    margin-bottom: 8px;
-    display: inline-block;
-    transition: .4s;
+/* انیمیشن hover */
+.why-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 40px 100px rgba(212,175,55,.45);
 }
 
-/* عدد */
-.counter{
-    display: block;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #fff;
-    margin-bottom: 6px;
+.why-card:hover i {
+    transform: rotate(15deg) scale(1.2);
 }
 
-/* خط طلایی ظریف زیر عدد */
-.counter::after{
-    content:"";
-    display:block;
-    width:32px;
-    height:2px;
-    margin:8px auto 0;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    opacity:.85;
+/* ریسپانسیو موبایل */
+@media(max-width: 1024px){
+    .why-cards {
+        grid-template-columns: repeat(2, 1fr); /* دو کارت در لپ‌تاپ کوچک یا تبلت */
+    }
 }
 
-/* توضیح */
-.counter-item p{
-    font-size: 16px;
-    opacity: .6;
-    letter-spacing: .4px;
-}
-
-/* hover – بسیار ظریف */
-.counter-item:hover .counter-icon{
-    transform: translateY(-4px);
-    text-shadow: 0 0 12px rgba(212,175,55,.6);
-}
-
-/* موبایل */
-@media(max-width:768px){
-    .counter{
-        font-size: 22px;
+@media(max-width: 768px){
+    .why-cards {
+        grid-template-columns: 1fr; /* یک کارت در هر ردیف برای موبایل */
     }
 }
 
