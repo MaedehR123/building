@@ -198,7 +198,7 @@ header {
    ========================================================= */
 .lux-divider {
     height: 1px;
-    margin: 120px auto;
+    margin: 20px auto;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
     box-shadow: 0 0 25px var(--gold);
 }
@@ -221,7 +221,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* هاله مشکی */
+    background: rgba(2, 6, 23, 0.559) ; 
     z-index: 1;
 }
 
@@ -254,7 +254,7 @@ header {
 }
 
 .about-content h2 {
-    font-size: 34px;
+    font-size: 50px;
     margin-bottom: 35px;
 }
 
@@ -538,6 +538,39 @@ header {
 }
 
 
+/* ===================== SERVICES BACKGROUND ===================== */
+.services-section {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 20px;
+    text-align: center;
+
+    /* بکگراند عکس */
+    background-image: url("imgs/services.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* پارالاکس ساده */
+    background-attachment: fixed;
+}
+
+/* هاله تیره برای خوانایی متن */
+.services-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.75); /* سورمه‌ای تیره، هماهنگ با تم */
+    z-index: 0;
+}
+
+/* محتوا بیاد روی هاله */
+.services-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+
 /* =========================================================
    MOUSE LIGHT EFFECT (افکت نور موس)
    ========================================================= */
@@ -575,27 +608,55 @@ header {
 
 
 /* =========================================================
-   FOOTER
+   TEAM SECTION (بخش تیم) + BACKGROUND + PARALLAX
    ========================================================= */
-footer {
-    text-align: center;
-    padding: 40px;
-    color: #aaa;
-}
 
-
-/* =========================================================
-   TEAM SECTION (بخش تیم)
-   ========================================================= */
 .team-section {
+    position: relative;
     padding: 120px 20px;
     text-align: center;
+
+    /* بکگراند تصویری */
+    background-image: url("imgs/team-members.webp"); /* عکس جلسه */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* پارالاکس */
+    background-attachment: fixed;
+
+    overflow: hidden;
+}
+
+/* هاله تیره سورمه‌ای برای خوانایی */
+.team-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(2, 6, 23, 0.85) 0%,
+        rgba(2, 6, 23, 0.75) 45%,
+        rgba(2, 6, 23, 0.9) 100%
+    );
+    z-index: 1;
+}
+
+/* قرار گرفتن محتوا روی بکگراند */
+.team-section > * {
+    position: relative;
+    z-index: 2;
 }
 
 .team-section h2 {
     font-size: 32px;
     margin-bottom: 80px;
+    color: #fff;
 }
+
+/* =========================================================
+   TEAM MEMBERS GRID
+   ========================================================= */
 
 .team-members {
     display: grid;
@@ -604,6 +665,10 @@ footer {
     max-width: 1200px;
     margin: auto;
 }
+
+/* =========================================================
+   TEAM CARD
+   ========================================================= */
 
 .team-member {
     background: var(--glass);
@@ -616,13 +681,13 @@ footer {
 }
 
 .team-member:hover {
-    transform: translateY(-10px); /* بالا آمدن کارت هنگام هاور */
+    transform: translateY(-10px);
 }
 
-
 /* =========================================================
-   TEAM AVATAR (آواتار اعضای تیم)
+   TEAM AVATAR
    ========================================================= */
+
 .team-avatar {
     width: 96px;
     height: 96px;
@@ -669,13 +734,14 @@ footer {
         inset 0 0 35px rgba(212,175,55,.2);
 }
 
-
 /* =========================================================
    TEAM TEXT
    ========================================================= */
+
 .team-member h3 {
     font-size: 18px;
     margin-bottom: 6px;
+    color: #fff;
 }
 
 .team-member p {
@@ -684,15 +750,31 @@ footer {
     letter-spacing: .5px;
 }
 
-
 /* =========================================================
-   LEADER (نمایش مدیر پروژه)
+   LEADER CARD (اختیاری)
    ========================================================= */
+
 .team-member.leader {
     border: 1px solid rgba(212,175,55,.35);
     box-shadow:
         0 0 40px rgba(212,175,55,.25),
         0 30px 90px rgba(0,0,0,.85);
+}
+
+/* =========================================================
+   RESPONSIVE + PARALLAX FIX (MOBILE)
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .team-section {
+        background-attachment: scroll; /* حل مشکل iOS */
+        padding: 90px 15px;
+    }
+
+    .team-section h2 {
+        font-size: 26px;
+        margin-bottom: 60px;
+    }
 }
 
 
@@ -1113,3 +1195,15 @@ header {
     }
 }
 
+
+
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #aaa;
+}
