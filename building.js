@@ -56,84 +56,50 @@ const projectSwiper = new Swiper('.project-swiper', {
 
 
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 /* =========================
-   CINEMATIC ABOUT ANIMATION
+   COUNTER + ICON ANIMATION
    ========================= */
 
-gsap.from(".about-content", {
-    scrollTrigger:{
-        trigger: ".about-section",
-        start: "top 75%",
-    },
-    y: 120,
-    opacity: 0,
-    duration: 1.4,
-    ease: "power4.out"
-});
+document.querySelectorAll(".counter-item").forEach(item => {
 
-gsap.from(".about-content h2", {
-    scrollTrigger:{
-        trigger: ".about-section",
-        start: "top 70%",
-    },
-    y: 40,
-    opacity: 0,
-    duration: 1,
-    delay: .2
-});
-
-gsap.from(".about-content p", {
-    scrollTrigger:{
-        trigger: ".about-section",
-        start: "top 65%",
-    },
-    y: 30,
-    opacity: 0,
-    stagger: .2,
-    duration: .9
-});
-
-gsap.from(".about-features div", {
-    scrollTrigger:{
-        trigger: ".about-features",
-        start: "top 80%",
-    },
-    y: 40,
-    opacity: 0,
-    stagger: .15,
-    duration: .8,
-    ease: "power3.out"
-});
-
-/* =========================
-   COUNTER ANIMATION
-   ========================= */
-
-const counters = document.querySelectorAll(".counter");
-
-counters.forEach(counter => {
+    const counter = item.querySelector(".counter");
+    const icon = item.querySelector(".counter-icon");
     const target = +counter.dataset.target;
 
     ScrollTrigger.create({
-        trigger: counter,
+        trigger: item,
         start: "top 85%",
         once: true,
         onEnter: () => {
+
+            /* number animation */
             gsap.fromTo(counter,
                 { innerText: 0 },
                 {
                     innerText: target,
-                    duration: 2,
+                    duration: 1.8,
                     ease: "power1.out",
                     snap: { innerText: 1 },
                     onUpdate: function () {
-                        counter.innerText = Math.floor(counter.innerText).toLocaleString();
+                        counter.innerText =
+                            Math.floor(counter.innerText).toLocaleString();
                     }
+                }
+            );
+
+            /* icon pulse */
+            gsap.fromTo(icon,
+                { scale: .6, opacity: 0 },
+                {
+                    scale: 1,
+                    opacity: 1,
+                    duration: .8,
+                    ease: "back.out(2)"
                 }
             );
         }
     });
 });
-
