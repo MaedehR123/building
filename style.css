@@ -763,3 +763,103 @@ header {
     .swiper-button-next { right: -50px; }
     .swiper-button-prev { left: -50px; }
 }
+
+
+
+/* =========================================================
+   ABOUT US SECTION
+   ========================================================= */
+
+.about-section{
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.about-container{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.about-content{
+    background: var(--glass);
+    padding: 70px 60px;
+    border-radius: 30px;
+    box-shadow: 0 40px 100px rgba(0,0,0,.75);
+    position: relative;
+    overflow: hidden;
+}
+
+/* خط طلایی لوکس */
+.about-content::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:140px;
+    height:2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    box-shadow:0 0 25px var(--gold);
+}
+
+.about-content h2{
+    font-size: 34px;
+    margin-bottom: 35px;
+}
+
+.about-content p{
+    font-size: 16px;
+    line-height: 2;
+    opacity: .9;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.about-content strong{
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* ویژگی‌ها */
+.about-features{
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 22px;
+}
+
+.about-features div{
+    background: rgba(255,255,255,.04);
+    padding: 18px 22px;
+    border-radius: 18px;
+    font-size: 14px;
+    box-shadow: inset 0 0 25px rgba(212,175,55,.12);
+    transition: .4s;
+}
+
+.about-features div:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 20px 55px rgba(212,175,55,.3);
+}
+
+/* دکمه CTA */
+.about-cta{
+    margin-top: 50px;
+    display: inline-block;
+}
+
+/* موبایل */
+@media(max-width:768px){
+    .about-content{
+        padding: 50px 30px;
+    }
+
+    .about-content h2{
+        font-size: 26px;
+    }
+
+    .about-content p{
+        font-size: 14px;
+        text-align: center;
+    }
+}
